@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="250dp"
+        android:drawableLeft='@android:drawable/ic_media_play'/>
+
+    <Button
+        android:id="@+id/addFileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add File"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="541dp"
+        android:drawableLeft="@android:drawable/ic_input_add"/>
+
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Sequence"
+        tools:layout_editor_absoluteX="155dp"
+        tools:layout_editor_absoluteY="636dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
