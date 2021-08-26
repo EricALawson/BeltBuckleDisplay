@@ -1,5 +1,8 @@
 package com.example.beltbuckledisplay.database
 
-class DisplayStateDao {
+import androidx.room.Dao
+
+@Dao
+interface DisplayStateDao {
 
 }
