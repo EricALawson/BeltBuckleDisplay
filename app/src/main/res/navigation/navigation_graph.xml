@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.beltbuckledisplay.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_editFileSettingsFragment"
+            app:destination="@id/editFileSettingsFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_displayModeFragment"
+            app:destination="@id/displayModeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/displayModeFragment"
+        android:name="com.example.beltbuckledisplay.DisplayModeFragment"
+        android:label="DisplayModeFragment" />
+
+    <fragment
+        android:id="@+id/editFileSettingsFragment"
+        android:name="com.example.beltbuckledisplay.EditFileSettingsFragment"
+        android:label="EditFileSettingsFragment" >
+        <argument android:name="uri"/>
+    </fragment>
+</navigation>
