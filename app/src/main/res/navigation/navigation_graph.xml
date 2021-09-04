@@ -27,6 +27,7 @@
         android:id="@+id/editFileSettingsFragment"
         android:name="com.example.beltbuckledisplay.EditFileSettingsFragment"
         android:label="EditFileSettingsFragment" >
-        <argument android:name="uri"/>
+        <argument android:name="uri"
+            app:argType="android.net.Uri"/>
     </fragment>
 </navigation>

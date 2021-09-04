@@ -22,7 +22,7 @@ class MainMenuFragment : Fragment() {
     private val fileSelector = registerForActivityResult(
         ActivityResultContracts.GetContent()) { uri: Uri? ->
         uri?.let {
-            val action = MainMenuFragmentDirections.actionMainMenuFragmentToEditFileSettingsFragment(it.toString())
+            val action = MainMenuFragmentDirections.actionMainMenuFragmentToEditFileSettingsFragment(it)
             findNavController().navigate(action)
         }
     }
