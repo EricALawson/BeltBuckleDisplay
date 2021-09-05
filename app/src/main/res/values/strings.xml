@@ -2,4 +2,9 @@
     <string name="app_name">Belt Buckle Display</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="preview_description">preview of image</string>
+    <string name="name_field_title">Name:</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="save_button_text">Save</string>
+    <string name="name_field_hint">Assign a name</string>
 </resources>
