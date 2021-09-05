@@ -1,10 +1,7 @@
 package com.example.beltbuckledisplay.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface DisplayStateDao {
@@ -15,8 +12,8 @@ interface DisplayStateDao {
     fun getState(id: Int): LiveData<DisplayState>
 
     @Insert
-    fun insertDisplayState(ds: DisplayState)
+    fun insertDisplayState(ds: DisplayState): Long
 
     @Update
-    fun updateDisplayState(ds: DisplayState)
+    fun updateDisplayState(ds: DisplayState): Int
 }
