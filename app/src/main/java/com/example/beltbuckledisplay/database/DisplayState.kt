@@ -1,13 +1,16 @@
 package com.example.beltbuckledisplay.database
 
 import android.net.Uri
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity
 data class DisplayState(
-    @PrimaryKey val uid: Int,
-    @ColumnInfo(name = "image_uri") val imageLocation: Uri,
-    @ColumnInfo(name = "name") val name: String,
-)
+    @PrimaryKey(autoGenerate = true) val uid: Int,
+    @ColumnInfo(name = "image_uri") var imageUri: Uri,
+    @ColumnInfo(name = "name") var name: String,
+) : Parcelable
