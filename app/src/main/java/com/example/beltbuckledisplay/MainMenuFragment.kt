@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.beltbuckledisplay.database.DisplayState
 import com.example.beltbuckledisplay.databinding.FragmentMainMenuBinding
 
 class MainMenuFragment : Fragment() {
@@ -22,7 +23,8 @@ class MainMenuFragment : Fragment() {
     private val fileSelector = registerForActivityResult(
         ActivityResultContracts.GetContent()) { uri: Uri? ->
         uri?.let {
-            val action = MainMenuFragmentDirections.actionMainMenuFragmentToEditFileSettingsFragment(it)
+            val ds = DisplayState(0, uri, "")
+            val action = MainMenuFragmentDirections.actionMainMenuFragmentToEditFileSettingsFragment(ds)
             findNavController().navigate(action)
         }
     }
