@@ -7,10 +7,14 @@ import com.example.beltbuckledisplay.database.DisplayStateDatabase
 import com.example.beltbuckledisplay.database.DisplayState
 import com.example.beltbuckledisplay.database.DisplayStateDao
 
-class DisplaySequenceViewModel: ViewModel() {
-//    private var startState: DisplayState? = null
-//    private var currentState: DisplayState? = null
-//    private var allStates: MutableList<DisplayState> = mutableListOf()
+class DisplayGraphViewModel: ViewModel() {
+    private var currentDisplayState: MutableLiveData<DisplayState> = MutableLiveData()
+    fun getCurrent(): LiveData<DisplayState> {
+        return currentDisplayState
+    }
+    fun setCurrent(ds: DisplayState) {
+        currentDisplayState.value = ds
+    }
 
     public val allStates: LiveData<List<DisplayState>> by lazy {
         DisplayStateDatabase.getInstance().DisplayStateDao().allStates()

@@ -21,7 +21,11 @@
     <fragment
         android:id="@+id/displayModeFragment"
         android:name="com.example.beltbuckledisplay.DisplayModeFragment"
-        android:label="DisplayModeFragment" />
+        android:label="DisplayModeFragment" >
+        <action
+            android:id="@+id/action_displayModeFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/editFileSettingsFragment"
@@ -29,5 +33,8 @@
         android:label="EditFileSettingsFragment" >
         <argument android:name="displayState"
             app:argType="com.example.beltbuckledisplay.database.DisplayState"/>
+        <action
+            android:id="@+id/action_editFileSettingsFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
 </navigation>

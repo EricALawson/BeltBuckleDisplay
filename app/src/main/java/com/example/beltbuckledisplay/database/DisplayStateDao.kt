@@ -11,7 +11,7 @@ interface DisplayStateDao {
     @Query("SELECT * FROM DisplayState WHERE uid = :id")
     fun getState(id: Int): LiveData<DisplayState>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDisplayState(ds: DisplayState): Long
 
     @Update

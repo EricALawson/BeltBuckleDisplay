@@ -10,7 +10,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 @Entity
 data class DisplayState(
-    @PrimaryKey(autoGenerate = true) val uid: Int,
+    @PrimaryKey(autoGenerate = true) var uid: Long,
     @ColumnInfo(name = "image_uri") var imageUri: Uri,
     @ColumnInfo(name = "name") var name: String,
 ) : Parcelable

@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.beltbuckledisplay.database.DisplayState
 import com.example.beltbuckledisplay.database.DisplayStateDatabase
@@ -17,6 +19,7 @@ class EditFileSettingsFragment: Fragment(R.layout.fragment_edit_file) {
     private lateinit var saveButton: Button
     private lateinit var cancelButton: Button
     private lateinit var resetButton: Button
+    private val viewModel: DisplayGraphViewModel by activityViewModels()
     private val args: EditFileSettingsFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,12 +36,19 @@ class EditFileSettingsFragment: Fragment(R.layout.fragment_edit_file) {
 
         saveButton = view.findViewById(R.id.saveButton)
         saveButton.setOnClickListener {
-            DisplayStateDatabase.getInstance().DisplayStateDao().insertDisplayState(editing)
+            val uid = DisplayStateDatabase.getInstance().DisplayStateDao().insertDisplayState(editing)
+            editing.uid = uid
+            viewModel.setCurrent(editing)
+            val action =
+                EditFileSettingsFragmentDirections.actionEditFileSettingsFragmentToMainMenuFragment()
+            findNavController().navigate(action)
+
         }
 
         cancelButton = view.findViewById(R.id.cancelButton)
         cancelButton.setOnClickListener {
-            //TODO: cancel button to back stack
+            val action = EditFileSettingsFragmentDirections.actionEditFileSettingsFragmentToMainMenuFragment()
+            findNavController().navigate(action)
         }
 
         resetButton = view.findViewById(R.id.resetButton)
