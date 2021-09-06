@@ -8,7 +8,7 @@ import com.example.beltbuckledisplay.database.DisplayState
 import com.example.beltbuckledisplay.database.DisplayStateDao
 
 class DisplayGraphViewModel: ViewModel() {
-    private var currentDisplayState: MutableLiveData<DisplayState> = MutableLiveData()
+    private val currentDisplayState: MutableLiveData<DisplayState> = MutableLiveData()
     fun getCurrent(): LiveData<DisplayState> {
         return currentDisplayState
     }

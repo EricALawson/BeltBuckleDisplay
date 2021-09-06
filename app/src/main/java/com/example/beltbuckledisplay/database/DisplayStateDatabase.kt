@@ -8,6 +8,7 @@ import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import androidx.room.Room
 
+fun displayStateDao(): DisplayStateDao = DisplayStateDatabase.getInstance().DisplayStateDao()
 
 @Database(entities = [DisplayState::class], version = 1)
 @TypeConverters(UriConverters::class)
@@ -53,6 +54,6 @@ class UriConverters {
 
     @TypeConverter
     fun toString(uri: Uri?): String? {
-        return uri.toString()
+        return uri?.toString()
     }
 }

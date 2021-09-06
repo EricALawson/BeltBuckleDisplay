@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft='@android:drawable/ic_media_play'
             android:text="Start"
+            android:enabled="false"
             tools:layout_editor_absoluteX="178dp"
             tools:layout_editor_absoluteY="250dp" />
 
