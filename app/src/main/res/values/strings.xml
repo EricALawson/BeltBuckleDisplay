@@ -7,4 +7,5 @@
     <string name="cancel_button_text">Cancel</string>
     <string name="save_button_text">Save</string>
     <string name="name_field_hint">Assign a name</string>
+    <string name="resetButtonText">Reset</string>
 </resources>

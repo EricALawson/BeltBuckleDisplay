@@ -31,7 +31,6 @@
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="@string/name_field_hint"
-            android:hintTextColor="#757575"
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:selectAllOnFocus="true"
@@ -68,6 +67,14 @@
             android:layout_weight="1"
             android:text="@string/cancel_button_text"
             style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/resetButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/resetButtonText" />
 
         <Button
             android:id="@+id/saveButton"
